@@ -1,0 +1,18 @@
+# Archivos de entorno
+.env
+.env.local
+.env.production
+
+# Dependencias
+node_modules/
+
+# Build
+dist/
+
+# Editor
+.vscode/
+*.local
+
+# OS
+.DS_Store
+Thumbs.db
