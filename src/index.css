@@ -405,17 +405,16 @@ select { cursor: pointer; }
     .section-heading h2 { font-size: 28px; }
 }
 .entry-curtain { display: none; }
-/* A decorative introduction: content loads immediately and never depends on a timer. */
+/* The introduction is removed after playback or first interaction, so focus cannot restart it. */
+.entry-shell:not(.is-entering) .hero-copy { animation: none; }
 @media (prefers-reduced-motion: no-preference) {
     .entry-curtain { position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 90; display: flex; align-items: center; justify-content: center; background: #a9212c; color: #fff4df; pointer-events: none; animation: entry-reveal .9s cubic-bezier(.22, 1, .36, 1) .22s both; }
     .entry-brand { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 24px; text-align: center; animation: entry-brand-fade .85s ease both; }
-    .entry-shell > .site-wrap { animation: entry-content .75s cubic-bezier(.22, 1, .36, 1) .28s backwards; }
-    .entry-shell .hero-copy { animation: enter-up .8s cubic-bezier(.22, 1, .36, 1) .34s backwards; }
+    .entry-shell.is-entering > .site-wrap { animation: entry-content .75s cubic-bezier(.22, 1, .36, 1) .28s backwards; }
+    .entry-shell.is-entering .hero-copy { animation: enter-up .8s cubic-bezier(.22, 1, .36, 1) .34s backwards; }
     .entry-mark { display: flex; align-items: center; justify-content: center; width: 78px; height: 78px; border: 1px solid #fff4df55; border-radius: 24px 24px 24px 5px; margin-bottom: 6px; }
     .entry-brand strong { font-size: clamp(27px, 5vw, 40px); font-weight: 650; letter-spacing: -.055em; }
     .entry-brand > span:last-child { font-size: 11px; letter-spacing: .12em; }
-    .entry-shell:focus-within > .entry-curtain { display: none; }
-    .entry-shell:focus-within > .site-wrap, .entry-shell:focus-within .hero-copy { animation: none; }
 }
 @keyframes entry-reveal {
     0% { transform: translateY(0); opacity: 1; visibility: visible; }
