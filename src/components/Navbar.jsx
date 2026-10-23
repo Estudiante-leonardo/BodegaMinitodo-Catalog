@@ -1,4 +1,4 @@
-const Navbar = ({ totalProductos }) => (
+const Navbar = ({ totalProductos, nombre = 'Minitodo Leoncito' }) => (
     <header className="sticky top-0 z-30 glass border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between gap-4">
 
@@ -10,7 +10,7 @@ const Navbar = ({ totalProductos }) => (
                     </svg>
                 </div>
                 <div>
-                    <p className="text-base font-bold text-white leading-tight tracking-tight">minitodo</p>
+                    <p className="text-base font-bold text-white leading-tight tracking-tight">{nombre}</p>
                     <p className="text-[10px] text-brand-400 font-semibold uppercase tracking-wider leading-none">Tienda</p>
                 </div>
             </div>
@@ -18,7 +18,7 @@ const Navbar = ({ totalProductos }) => (
             {/* Badge cantidad */}
             {totalProductos > 0 && (
                 <span className="text-xs text-slate-500 font-medium hidden sm:block">
-                    {totalProductos} producto{totalProductos !== 1 ? 's' : ''} disponible{totalProductos !== 1 ? 's' : ''}
+                    {totalProductos} producto{totalProductos !== 1 ? 's' : ''} en el catálogo
                 </span>
             )}
 

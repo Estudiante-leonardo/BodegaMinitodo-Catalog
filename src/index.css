@@ -1,5 +1,24 @@
 @import "tailwindcss";
 
+.catalog-hero { background:radial-gradient(ellipse at 85% 10%,#88133755,transparent 65%); border:1px solid #ffffff14; border-radius:24px; padding:clamp(24px,5vw,56px); }
+.eyebrow { color:#fda4af; text-transform:uppercase; font-size:11px; font-weight:600; letter-spacing:.14em; }
+.catalog-label { display:block; color:#cbd5e1; font-size:12px; }
+.catalog-input { display:block; width:100%; margin-top:8px; padding:12px; background:#16161f; color:#f1f5f9; border:1px solid #ffffff26; border-radius:12px; font-size:14px; }
+.catalog-button { padding:11px 18px; border:1px solid #fb718566; border-radius:12px; background:#e11d4826; color:#fecdd3; font-size:14px; font-weight:600; cursor:pointer; }
+.catalog-button:hover { background:#e11d4844; }
+.product-card { cursor:pointer; transition:border-color .2s,transform .2s; }
+.product-card:hover { border-color:#fb718599; transform:translateY(-3px); }
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible { outline:2px solid #fb7185; outline-offset:3px; }
+.product-dialog { position:fixed; inset:0; margin:auto; width:min(900px,94vw); max-height:90dvh; overflow:auto; background:#16161f; color:#f1f5f9; border:1px solid #ffffff30; border-radius:24px; padding:0; }
+.product-dialog::backdrop { background:#000b; backdrop-filter:blur(4px); }
+.dialog-close { position:absolute; right:12px; top:12px; z-index:2; background:#16161f; color:white; width:36px; height:36px; border-radius:50%; cursor:pointer; }
+.detail-layout { display:grid; grid-template-columns:1fr 1fr; }
+.detail-photo { display:flex; align-items:center; justify-content:center; padding:30px; min-height:300px; background:white; color:#475569; }
+.detail-photo img { width:100%; max-height:480px; object-fit:contain; }
+.detail-info { padding:40px 28px; }
+@media(max-width:600px) { .detail-layout { grid-template-columns:1fr; } .detail-photo { min-height:220px; } .detail-photo img { max-height:260px; } .detail-info { padding:25px; } }
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+
 /* =========================================
    DESIGN TOKENS — Minitodo Catálogo
    Color brand: Rojo  |  Tema: Dark + Glass

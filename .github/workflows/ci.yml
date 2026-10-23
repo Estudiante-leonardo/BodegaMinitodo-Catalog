@@ -27,6 +27,9 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      - name: Pruebas de filtros
+        run: npm test
+
       - name: Build de producción
         run: npm run build
         env:
