@@ -205,26 +205,23 @@ select { cursor: pointer; }
 .skeleton-line { height: 14px; border-radius: 5px; margin-bottom: 12px; width: 80%; }
 .skeleton-line.short { width: 50%; height: 10px; }
 .skeleton-price { width: 60px; height: 24px; border-radius: 5px; margin-top: 15px; }
-.product-dialog { position: fixed; top: 0; right: 0; bottom: 0; left: 0; margin: auto; padding: 0; background: #fffdf8; color: var(--ink); border: 0; border-radius: 26px; width: 880px; max-width: calc(100% - 40px); max-height: 90vh; max-height: 90dvh; overflow: auto; box-shadow: 0 30px 100px #23180c40; }
+.product-dialog { position: fixed; top: 0; right: 0; bottom: 0; left: 0; margin: auto; padding: 0; background: #fffdf8; color: var(--ink); border: 0; border-radius: 26px; width: 800px; max-width: calc(100% - 40px); max-height: 90vh; max-height: 90dvh; overflow: auto; box-shadow: 0 30px 100px #23180c40; }
 .product-dialog::backdrop { background: #241c17a6; }
 .product-dialog[open] { animation: dialog-in .22s ease both; }
 .dialog-close { position: absolute; top: 14px; right: 14px; z-index: 2; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #fffdf8; border: 1px solid var(--line); color: var(--ink); box-shadow: 0 3px 8px #00000008; }
 .detail-layout { display: grid; grid-template-columns: 1fr 1fr; }
-.detail-photo { display: flex; align-items: center; justify-content: center; padding: 50px 30px; background: white; min-height: 430px; }
-.detail-photo img { width: 100%; max-height: 380px; object-fit: contain; }
-.detail-info { padding: 58px 32px 35px; min-width: 0; }
+.detail-photo { display: flex; align-items: center; justify-content: center; padding: 38px 30px; background: white; min-height: 350px; }
+.detail-photo img { width: 100%; max-height: 300px; object-fit: contain; }
+.detail-info { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 48px 32px; min-width: 0; }
 .detail-info h2 { font-size: 36px; font-weight: 650; letter-spacing: -.05em; line-height: 1.1; margin-top: 12px; overflow-wrap: anywhere; }
 .detail-price { font-size: 38px; color: var(--red); letter-spacing: -.04em; font-weight: 650; margin: 20px 0 12px; }
 .detail-price small { font-size: 18px; font-weight: 500; }
 .detail-stock { display: inline-flex; align-items: center; gap: 7px; font-size: 11px; padding: 7px 10px; border-radius: 20px; color: #3f653c; background: #edf3e7; }
 .detail-stock.is-unavailable { color: #81551c; background: #f9eed8; }
-.detail-facts { display: flex; gap: 30px; flex-wrap: wrap; margin: 26px 0; border-top: 1px solid var(--line); padding-top: 20px; }
+.detail-facts { display: flex; justify-content: center; gap: 20px 30px; flex-wrap: wrap; width: 100%; margin: 24px 0 0; border-top: 1px solid var(--line); padding-top: 20px; }
 .detail-facts dt { color: var(--muted); font-size: 10px; margin-bottom: 6px; }
 .detail-facts dd { font-size: 13px; overflow-wrap: anywhere; }
-.detail-description { color: #655e53; font-size: 13px; line-height: 1.85; white-space: pre-line; overflow-wrap: anywhere; }
-.detail-share { width: 100%; margin-top: 24px; }
-.detail-share-note { font-size: 11px; line-height: 1.6; color: var(--muted); margin-top: 12px; }
-.detail-note { margin-top: 18px; font-size: 10px; color: var(--muted); display: flex; align-items: center; gap: 7px; }
+.detail-description { color: #655e53; font-size: 13px; line-height: 1.85; white-space: pre-line; overflow-wrap: anywhere; width: 100%; text-align: left; margin-top: 20px; }
 .dialog-fallback { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 100; background: #241c17a6; }
 .dialog-fallback .product-dialog[open] { display: block; z-index: 101; }
 /* Motion never hides content when scripting or advanced browser features are unavailable. */

@@ -7,7 +7,7 @@ La interfaz usa una paleta de papel marfil y rojo cereza, tipografía Outfit con
 - Portada con navegación manual entre hasta seis productos disponibles. No cambia de producto automáticamente.
 - Categorías en botones desplazables; filtros desplegables en pantallas de hasta 600 px. Búsqueda siempre visible y filtros activos que se pueden quitar individualmente.
 - Tarjetas completas pulsables mediante un botón dentro del título, para conservar la estructura de encabezados y la navegación por teclado.
-- Ficha de producto con diálogo nativo, cierre con Escape y retorno al control que la abrió. Incluye alternativa para navegadores sin `showModal` y aviso cuando el portapapeles no está disponible.
+- Ficha de producto compacta con información centrada, sin botones de compartir ni llamadas repetidas a visitar la bodega. Usa diálogo nativo, cierre con Escape y retorno al control que la abrió, con alternativa para navegadores sin `showModal`.
 - Navegación inferior móvil, espacio para las áreas seguras de iPhone, campos de búsqueda de 16 px para evitar el zoom de enfoque en iOS y botones principales de al menos 44 px.
 - Fondos opacos antes de aplicar desenfoque opcional; altura `vh` antes de `dvh`; tamaños reservados para imágenes y alternativa visible ante errores de carga.
 - Animaciones breves, efectos de hover solo para dispositivos con puntero apropiado, respeto de `prefers-reduced-motion`, soporte para colores forzados e impresión.

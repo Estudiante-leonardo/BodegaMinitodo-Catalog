@@ -4,9 +4,7 @@ import Icon from './Icon';
 export default function ProductoDetalle({ producto, onClose }) {
     const dialog = useRef(null);
     const host = useRef(null);
-    const [copiado, setCopiado] = useState(false);
     const [sinFoto, setSinFoto] = useState(false);
-    const [copyError, setCopyError] = useState(false);
 
     useEffect(() => {
         const node = dialog.current;
@@ -44,15 +42,6 @@ export default function ProductoDetalle({ producto, onClose }) {
         };
     }, [onClose]);
 
-    const copy = async () => {
-        setCopyError(false);
-        try {
-            const url = new URL(window.location.href);
-            url.searchParams.set('producto', producto.id);
-            await navigator.clipboard.writeText(url.href);
-            setCopiado(true);
-        } catch { setCopiado(false); setCopyError(true); }
-    };
     const backdropClick = event => {
         if (event.target !== dialog.current) return;
         const rect = dialog.current.getBoundingClientRect();
@@ -72,10 +61,6 @@ export default function ProductoDetalle({ producto, onClose }) {
                     <p className={`detail-stock ${available ? '' : 'is-unavailable'}`}><Icon name={available ? 'check' : 'clock'} size={14}/>{available ? 'Disponible en la bodega' : 'Agotado por el momento'}</p>
                     {(producto.marca || producto.presentacion) && <dl className="detail-facts">{[['Marca', producto.marca], ['Presentación', producto.presentacion]].filter(([, v]) => v).map(([key, value]) => <div key={key}><dt>{key}</dt><dd>{value}</dd></div>)}</dl>}
                     {producto.descripcion && <p className="detail-description">{producto.descripcion}</p>}
-                    <button onClick={copy} className="button button-outline detail-share"><Icon name={copiado ? 'check' : 'share'} size={17}/>{copiado ? 'Enlace copiado' : 'Copiar enlace del producto'}</button>
-                    <span role="status" className="sr-only">{copiado ? 'Enlace copiado al portapapeles' : ''}</span>
-                    {copyError && <p role="status" className="detail-share-note">Tu navegador no permite copiar automáticamente. Puedes copiar el enlace desde la barra de direcciones.</p>}
-                    <p className="detail-note"><Icon name="store" size={14}/>Encuéntralo en nuestra bodega.</p>
                 </div>
             </div>
         </dialog>
