@@ -15,7 +15,7 @@ const ProductoCard = ({ producto, onOpen, index = 0 }) => {
         <div className="product-info">
             <p className="product-brand">{producto.marca || producto.subcategorias?.nombre || 'Minitodo'}</p>
             <h3><button type="button" className="product-title" onClick={() => onOpen(producto)} aria-label={`Ver ${producto.nombre}, S/ ${Number(producto.precio).toFixed(2)}${available ? '' : ', agotado'}`}>{producto.nombre}</button></h3>
-            <p className="product-presentation">{producto.presentacion || producto.subcategorias?.categorias?.nombre || 'Consulta los detalles del producto'}</p>
+            <p className="product-presentation">{producto.presentacion || ''}</p>
             <div className="product-bottom"><span className="product-price"><small>S/</small> {Number(producto.precio).toFixed(2)}</span><span className="product-link">Ver producto <Icon name="arrow" size={15}/></span></div>
         </div>
     </article>;
