@@ -1,29 +1,17 @@
-const Navbar = ({ totalProductos, nombre = 'Minitodo Leoncito' }) => (
-    <header className="sticky top-0 z-30 glass border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between gap-4">
+import Icon from './Icon';
 
-            {/* Logo */}
-            <div className="flex items-center gap-3 shrink-0">
-                <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center shadow-md shadow-brand-700/40 animate-pulse-glow">
-                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                </div>
-                <div>
-                    <p className="text-base font-bold text-white leading-tight tracking-tight">{nombre}</p>
-                    <p className="text-[10px] text-brand-400 font-semibold uppercase tracking-wider leading-none">Tienda</p>
-                </div>
-            </div>
-
-            {/* Badge cantidad */}
-            {totalProductos > 0 && (
-                <span className="text-xs text-slate-500 font-medium hidden sm:block">
-                    {totalProductos} producto{totalProductos !== 1 ? 's' : ''} en el catálogo
-                </span>
-            )}
-
+export default function Navbar({ totalProductos, nombre = 'Minitodo Leoncito' }) {
+    return <header className="site-header">
+        <div className="page-shell header-inner">
+            <a className="brand" href="#inicio" aria-label={nombre + ', inicio'}>
+                <span className="brand-mark"><Icon name="store" size={27}/></span>
+                <span className="brand-copy"><strong>{nombre}</strong><span>Tu bodega de siempre</span></span>
+            </a>
+            <nav className="desktop-nav" aria-label="Navegación principal">
+                <a href="#productos">El catálogo <span className="nav-count">{totalProductos}</span></a>
+                <a href="#bodega">Nuestra bodega</a>
+            </nav>
+            <a className="header-visit" href="#bodega"><span>Ven a visitarnos</span><Icon name="northeast" size={18}/></a>
         </div>
-    </header>
-);
-
-export default Navbar;
+    </header>;
+}
